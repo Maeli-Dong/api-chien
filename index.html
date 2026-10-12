@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerie de Chiens</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="bg-background text-foreground font-sans min-h-screen">
+
+  <!-- ===== VUE GALERIE ===== -->
+  <div id="vue-galerie" class="px-6 py-8 max-w-6xl mx-auto">
+
+    <header class="flex items-center justify-between mb-8">
+      <h1 class="text-3xl font-bold text-foreground leading-none">
+        <span class="text-5xl font-black">12</span>
+        <span class="text-xl font-normal text-foreground/70 ml-2">races de chien aléatoire</span>
+      </h1>
+      <button id="btn-recharger"
+              class="bg-primary text-white text-sm font-semibold px-4 py-2 rounded-lg
+                     hover:opacity-90 active:scale-95 transition-all duration-150 cursor-pointer">
+        Recharger
+      </button>
+    </header>
+
+    <main id="galerie"
+          class="grid gap-4"
+          style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr))">
+    </main>
+
+  </div>
+
+  <!-- ===== VUE DÉTAIL ===== -->
+  <div id="vue-detail" class="hidden">
+
+    <!-- Mobile : titre au-dessus de l'image -->
+    <div class="px-6 pt-8 pb-4 md:hidden">
+      <h2 id="detail-titre-mobile"
+          class="text-2xl font-bold text-foreground mb-4"></h2>
+    </div>
+
+    <!-- Conteneur image (plein cadre) -->
+    <div class="relative max-w-6xl mx-auto px-4 md:px-6 md:py-6">
+      <img id="detail-image"
+           src="" alt=""
+           class="w-full rounded-2xl object-cover max-h-[80vh]">
+
+      <!-- Titre en overlay – desktop uniquement -->
+      <h2 id="detail-titre-desktop"
+          class="hidden md:block absolute top-8 left-10
+                 text-white font-bold text-2xl drop-shadow-lg"></h2>
+
+      <!-- Bouton Retour -->
+      <button id="btn-retour"
+              class="absolute top-4 right-4 md:top-8 md:right-10
+                     bg-primary text-white text-xs font-semibold
+                     px-3 py-1.5 rounded-lg
+                     hover:opacity-90 active:scale-95 transition-all duration-150 cursor-pointer">
+        Retour
+      </button>
+    </div>
+
+  </div>
+
+</body>
+</html>
