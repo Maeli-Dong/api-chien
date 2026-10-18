@@ -1,0 +1,16 @@
+# Routes propres : Apache traduit l'adresse demandée vers api.php,
+# sans que le navigateur le voie. Le PHP ne change pas d'une ligne.
+#
+#   oeuvres              ->  api.php
+#   oeuvres?page=2       ->  api.php?page=2
+#   oeuvres/12           ->  api.php?id=12
+#
+# Il faut mod_rewrite actif et AllowOverride All sur le dossier (voir LISEZ-MOI).
+
+RewriteEngine On
+
+# QSA garde les paramètres de l'adresse : ?page=2, ?categorie=estampe
+RewriteRule ^oeuvres/?$ api.php [L,QSA]
+
+# ([0-9]+) capture le numéro ; $1 le recopie dans ?id=
+RewriteRule ^oeuvres/([0-9]+)/?$ api.php?id=$1 [L,QSA]
