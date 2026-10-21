@@ -1,0 +1,65 @@
+{
+  "pagination": {
+    "total": 24,
+    "par_page": 6,
+    "page": 1,
+    "pages": 4,
+    "suivante": 2
+  },
+  "data": [
+    {
+      "id": 1,
+      "titre": "La Chambre",
+      "artiste": "Vincent van Gogh",
+      "annee": 1889,
+      "categorie": "peinture",
+      "image": "https://www.artic.edu/iiif/2/6644829f-f292-c5c4-a73c-0356a6fdbf0d/full/843,/0/default.jpg",
+      "hauteur_cm": 73.6
+    },
+    {
+      "id": 2,
+      "titre": "Rue de Paris, temps de pluie",
+      "artiste": "Gustave Caillebotte",
+      "annee": 1877,
+      "categorie": "peinture",
+      "image": "https://www.artic.edu/iiif/2/f8fd76e9-c396-5678-36ed-6a348c904d27/full/843,/0/default.jpg",
+      "hauteur_cm": 212.2
+    },
+    {
+      "id": 3,
+      "titre": "Un dimanche à la Grande Jatte",
+      "artiste": "Georges Seurat",
+      "annee": 1884,
+      "categorie": "peinture",
+      "image": "https://www.artic.edu/iiif/2/2d484387-2509-5e8e-2c43-22f9981972eb/full/843,/0/default.jpg",
+      "hauteur_cm": 207.5
+    },
+    {
+      "id": 4,
+      "titre": "Sous la vague au large de Kanagawa",
+      "artiste": "Katsushika Hokusai",
+      "annee": 1830,
+      "categorie": "estampe",
+      "image": "https://www.artic.edu/iiif/2/2fa24f36-cc26-41b6-4b49-12bba2a6c1c8/full/843,/0/default.jpg",
+      "hauteur_cm": 25.4
+    },
+    {
+      "id": 5,
+      "titre": "Bouddha Shakyamuni assis en méditation",
+      "artiste": null,
+      "annee": 1100,
+      "categorie": "sculpture",
+      "image": "https://www.artic.edu/iiif/2/0675f9a9-1a7b-c90a-3bb6-7f7be2afb678/full/843,/0/default.jpg",
+      "hauteur_cm": 160
+    },
+    {
+      "id": 6,
+      "titre": "Frederick Douglass",
+      "artiste": "Samuel J. Miller",
+      "annee": 1847,
+      "categorie": "photographie",
+      "image": "https://www.artic.edu/iiif/2/68597cf9-01aa-7c1f-1179-d4b8811e1c05/full/843,/0/default.jpg",
+      "hauteur_cm": 14
+    }
+  ]
+}

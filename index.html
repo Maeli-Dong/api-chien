@@ -20,47 +20,87 @@
   <!-- ===== VUE GALERIE ===== -->
   <div id="vue-galerie" class="px-6 py-8 max-w-6xl mx-auto">
 
-    <header class="flex items-center justify-between mb-8">
+    <header class="flex items-center justify-between mb-8 gap-4 flex-wrap">
       <h1 class="text-3xl font-bold text-foreground leading-none entete__titre">
         <span id="compteur" class="text-5xl font-black"></span>
-        <span class="text-xl font-normal text-foreground/70 ml-2 entete__texte">races de chien aléatoire</span>
+        <span class="text-xl font-normal text-foreground/70 ml-2 entete__texte">chiens</span>
       </h1>
-      <button id="btn-recharger" class="border border-primary bg-primary text-white text-sm font-semibold px-4 py-2 rounded-lg
-                     hover:bg-transparent hover:text-primary active:scale-95 transition-all duration-150 cursor-pointer">
-        Recharger
-      </button>
-      <button id="ralenti" type="button" class="border border-primary bg-primary text-white text-sm font-semibold px-4 py-2 rounded-lg
-                     hover:bg-transparent hover:text-primary active:scale-95 transition-all duration-150 cursor-pointer">Ralenti</button>
+      <div class="flex items-center gap-3">
+        <button id="btn-recharger" type="button" class="border border-primary bg-primary text-white text-sm font-semibold px-4 py-2 rounded-lg
+                       hover:bg-transparent hover:text-primary active:scale-95 transition-all duration-150 cursor-pointer">
+          Recharger
+        </button>
+        <button id="ralenti" type="button" class="border border-primary bg-primary text-white text-sm font-semibold px-4 py-2 rounded-lg
+                       hover:bg-transparent hover:text-primary active:scale-95 transition-all duration-150 cursor-pointer">
+          Ralenti
+        </button>
+      </div>
     </header>
 
     <main id="galerie" class="grid gap-4" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr))">
     </main>
+
+    <!-- Boutons de pagination -->
+    <nav id="pagination" class="flex items-center justify-center gap-4 mt-8" style="display:none">
+      <button id="btn-precedent" type="button"
+              class="border border-primary bg-primary text-white text-sm font-semibold px-5 py-2 rounded-lg
+                     hover:bg-transparent hover:text-primary active:scale-95 transition-all duration-150 cursor-pointer
+                     disabled:opacity-40 disabled:cursor-not-allowed">
+        ← Précédent
+      </button>
+      <span id="info-page" class="text-sm font-medium text-foreground/70"></span>
+      <button id="btn-suivant" type="button"
+              class="border border-primary bg-primary text-white text-sm font-semibold px-5 py-2 rounded-lg
+                     hover:bg-transparent hover:text-primary active:scale-95 transition-all duration-150 cursor-pointer
+                     disabled:opacity-40 disabled:cursor-not-allowed">
+        Suivant →
+      </button>
+    </nav>
 
   </div>
 
   <!-- ===== VUE DÉTAIL ===== -->
   <div id="vue-detail" class="hidden">
 
-    <!-- Mobile : titre au-dessus de l'image -->
+    <!-- Mobile : titre et artiste au-dessus de l'image -->
     <div class="px-6 pt-8 pb-4 md:hidden">
-      <h2 id="detail-titre-mobile" class="text-2xl font-bold text-foreground mb-4"></h2>
+      <h2 id="detail-titre-mobile" class="text-2xl font-bold text-foreground mb-1"></h2>
+      <p id="detail-artiste-mobile" class="text-base text-foreground/70"></p>
     </div>
 
     <!-- Conteneur image (plein cadre) -->
     <div class="relative max-w-6xl mx-auto px-4 md:px-6 md:py-6">
-      <img id="detail-image" src="" alt="" class="w-full rounded-2xl object-cover max-h-[80vh]">
+      <img id="detail-image" src="" alt="" class="w-full rounded-2xl object-cover max-h-[80vh] shadow-lg">
 
-      <!-- Titre en overlay – desktop uniquement -->
-      <h2 id="detail-titre-desktop" class="hidden md:block absolute top-8 left-10
-                 text-white font-bold text-2xl drop-shadow-lg"></h2>
+      <!-- Titre et artiste en overlay – desktop uniquement -->
+      <div class="hidden md:block absolute top-8 left-10 text-white drop-shadow-lg max-w-xl">
+        <h2 id="detail-titre-desktop" class="font-bold text-2xl"></h2>
+        <p id="detail-artiste-desktop" class="text-base text-white/90 font-medium mt-1"></p>
+      </div>
 
       <!-- Bouton Retour -->
-      <button id="btn-retour" class="absolute top-4 right-4 md:top-8 md:right-10
+      <button id="btn-retour" type="button" class="absolute top-4 right-4 md:top-8 md:right-10
                      border border-primary bg-primary text-white text-xs font-semibold
                      px-3 py-1.5 rounded-lg
                      hover:bg-transparent hover:text-primary active:scale-95 transition-all duration-150 cursor-pointer">
         Retour
       </button>
+    </div>
+
+    <!-- Informations complémentaires sur l'œuvre -->
+    <div class="max-w-6xl mx-auto px-4 md:px-6 pb-12 pt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div class="bg-card p-4 rounded-xl border border-card-line shadow-xs text-center">
+        <span class="block text-xs uppercase tracking-wider text-muted-foreground-1 font-semibold">Catégorie</span>
+        <span id="detail-categorie" class="text-lg font-bold text-foreground capitalize mt-1 block"></span>
+      </div>
+      <div class="bg-card p-4 rounded-xl border border-card-line shadow-xs text-center">
+        <span class="block text-xs uppercase tracking-wider text-muted-foreground-1 font-semibold">Âge</span>
+        <span id="detail-annee" class="text-lg font-bold text-foreground mt-1 block"></span>
+      </div>
+      <div class="bg-card p-4 rounded-xl border border-card-line shadow-xs text-center">
+        <span class="block text-xs uppercase tracking-wider text-muted-foreground-1 font-semibold">Poids</span>
+        <span id="detail-hauteur" class="text-lg font-bold text-foreground mt-1 block"></span>
+      </div>
     </div>
 
   </div>
